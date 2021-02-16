@@ -1,11 +1,5 @@
 "use strict";
 
-'use strict';
-
-
-
-
-
 function Branch(location, min, max, avg) {
     this.location = location;
     this.min = min;
