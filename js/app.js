@@ -5,9 +5,10 @@ function Branch(location, min, max, avg) {
     this.min = min;
     this.max = max;
     this.avg = avg;
-    this.totalDailyCookies = [];
-    this.noOfcustomer = 0;
-    this.cookiesPerHour = 0;
+    this.Tot = 0;
+    this.totalDailyCookies = 0;
+    this.firsttotal = 0;
+    this.cookiesPerHour = [];
     this.total = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
     this.hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 }
@@ -17,7 +18,9 @@ function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-const division = document.getElementById('location');
+const division = document.getElementById('cookies-shop');
+
+
 
 const articleEl = document.createElement('article');
 division.appendChild(articleEl);
@@ -28,8 +31,9 @@ articleEl.appendChild(tableEl);
 Branch.prototype.calc = function() {
     for (let i = 0; i < this.hours.length; i++) {
         this.cookiesPerHour[i] = Math.floor(getRandomNumber(this.min, this.max) * this.avg);
-        this.noOfcustomer += this.cookiesPerHour[i];
-        this.totalDailyCookies = this.total;
+        this.firsttotal += this.cookiesPerHour[i];
+        this.totalDailyCookies = this.firsttotal;
+
     }
 };
 
@@ -64,7 +68,9 @@ Branch.prototype.theHeader = function() {
         let th2El = document.createElement('th');
         headerEl.appendChild(th2El);
         th2El.textContent = this.hours[i];
-        this.noofcustomer[i] += this.cookiesPerHour[i];
+        this.firsttotal += this.cookiesPerHour[i];
+
+
     }
 
     let th3El = document.createElement('th');
@@ -81,14 +87,17 @@ Branch.prototype.theFooter = function() {
     thFooter1.textContent = 'Totals';
 
     for (let i = 0; i < this.hours.length; i++) {
-        let thFoot2 = document.createElement('th');
+        let thFooter2 = document.createElement('th');
         footerEl.appendChild(thFoot2);
-        thFooter2.textContent = this.noOfcustomer[i];
+        thFooter2.textContent = this.firsttotal[i];
+
     }
 
     let thFooter3 = document.createElement('th');
     footerEl.appendChild(thFooter3);
-    thFoot3.textContent = 'Total Of Total';
+    thFooter3.textContent = 'Total Of Totals';
+
+
 };
 
 
@@ -102,7 +111,7 @@ const Paris = new Branch('Paris', 20, 38, 3.7);
 
 const Lima = new Branch('Lima', 2, 16, 4.6);
 
-Seattle.theHeader();
+
 
 Seattle.calc();
 Seattle.render();
@@ -118,8 +127,7 @@ Paris.render();
 
 Lima.calc();
 Lima.render();
-
-Seattle.theFooter();
+Tot.calc();
 
 
 /*const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
@@ -367,5 +375,4 @@ function getRandomNumber(min, max) {
     tokyo.render();
     dubai.render();
     paris.render();
-    lima.render();
-    *\
+    // lima.render();*/
