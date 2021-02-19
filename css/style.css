@@ -1,55 +1,64 @@
-                                                                                                                                        body {
-                                                                                                                                            font-family: 'Truculenta', sans-serif;
-                                                                                                                                            color: brown;
-                                                                                                                                            font-family: 'Zilla Slab Highlight', cursive;
-                                                                                                                                            color: rgb(26, 18, 9);
-                                                                                                                                        }
-                                                                                                                                        
-                                                                                                                                        * {
-                                                                                                                                            box-sizing: border-box;
-                                                                                                                                        }
-                                                                                                                                        
-                                                                                                                                        header {
-                                                                                                                                            background-color: rgb(218, 88, 148);
-                                                                                                                                            padding: 40px;
-                                                                                                                                            text-align: cente
-                                                                                                                                        }
-                                                                                                                                        
-                                                                                                                                        .row :first-child {
-                                                                                                                                            background-color: rgba(71, 35, 6, 0.801);
-                                                                                                                                            width: 25%;
-                                                                                                                                        }
-                                                                                                                                        
-                                                                                                                                        .row :nth-child(2) {
-                                                                                                                                            background-color: rgba(112, 47, 3, 0.801);
-                                                                                                                                            width: 50%;
-                                                                                                                                        }
-                                                                                                                                        
-                                                                                                                                        .row :nth-child(3) {
-                                                                                                                                            background-color: rgba(214, 144, 52, 0.801);
-                                                                                                                                            width: 25%;
-                                                                                                                                        }
-                                                                                                                                        
-                                                                                                                                        .column {
-                                                                                                                                            float: right;
-                                                                                                                                            min-height: 60vh;
-                                                                                                                                            padding: 15px;
-                                                                                                                                        }
-                                                                                                                                        
-                                                                                                                                        header h1 {
-                                                                                                                                            font-size: small;
-                                                                                                                                            margin-bottom: 10px;
-                                                                                                                                        }
-                                                                                                                                        
-                                                                                                                                        header nav ul li :last-child {
-                                                                                                                                            right: 30px;
-                                                                                                                                        }
-                                                                                                                                        
-                                                                                                                                        footer {
-                                                                                                                                            background-color: rgb(75, 11, 21);
-                                                                                                                                            padding: 20px
-                                                                                                                                        }
-                                                                                                                                        
-                                                                                                                                        header nav ul {
-                                                                                                                                            position: relative;
-                                                                                                                                        }
+* {
+    box-sizing: border-box;
+}
+
+main {
+    background-color: teal;
+}
+
+header {
+    background-color: rgb(199, 117, 155);
+    padding: 40px;
+    text-align: center;
+    font-family: 'Yellowtail', cursive;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+nav li {
+    color: teal;
+}
+
+.row :first-child {
+    width: 25%;
+}
+
+.row :nth-child(2) {
+    width: 50%;
+}
+
+.row :nth-child(3) {
+    width: 25%;
+}
+
+.column {
+    float: right;
+    min-height: 60vh;
+    padding: 15px;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+header nav ul li :last-child {
+    right: 30px;
+}
+
+footer {
+    background-color: rgb(192, 216, 228);
+    padding: 20px;
+}
+
+header nav ul {
+    position: relative;
+}
+
+tr,
+th,
+td {
+    border: 1px solid rgb(240, 49, 138);
+    padding: 5px;
+    background-color: teal;
+    color: violet;
+}
