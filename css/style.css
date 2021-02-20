@@ -1,81 +1,81 @@
-    * {
-        box-sizing: border-box;
-    }
-    
-    main {
-        background-color: teal;
-    }
-    
-    header {
-        background-color: rgb(199, 117, 155);
-        padding: 100px;
-        text-align: center;
-        font-family: 'Yellowtail', cursive;
-        font-size: 50px;
-        font-weight: bold;
-    }
-    
-    nav li {
-        font-family: cursive;
-        font-size: x-large;
-        color: teal;
-    }
-    
-    .row :first-child {
-        width: 25%;
-    }
-    
-    .row :nth-child(2) {
-        width: 25%;
-    }
-    
-    .row :nth-child(3) {
-        width: 25%;
-    }
-    
-    .column {
-        float: right;
-        min-height: 60vh;
-        padding: 15px;
-    }
-    
-    header h1 {
-        margin-bottom: 10px;
-    }
-    
-    header nav ul li :last-child {
-        right: 30px;
-    }
-    
-    footer {
-        background-color: rgb(192, 216, 228);
-        padding: 20px;
-    }
-    
-    header nav ul {
-        position: relative;
-    }
-    
-    tr,
-    th,
-    td {
-        border: solid 2px black;
-        color: gray;
-        color: pink;
-        text-align: center;
-        height: 50px;
-    }
-    
-    table {
-        width: 1000px
-    }
-    
-    .cookiesImg {
-        width: 350px;
-        height: auto;
-    }
-    
-    a {
-        text-decoration: none;
-        color: aqua;
-    }
+* {
+    box-sizing: border-box;
+}
+
+main {
+    background-color: teal;
+}
+
+header {
+    background-color: rgb(199, 117, 155);
+    padding: 100px;
+    text-align: center;
+    font-family: 'Yellowtail', cursive;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+nav li {
+    font-family: cursive;
+    font-size: x-large;
+    color: teal;
+}
+
+.row :first-child {
+    width: 25%;
+}
+
+.row :nth-child(2) {
+    width: 25%;
+}
+
+.row :nth-child(3) {
+    width: 25%;
+}
+
+.column {
+    float: right;
+    min-height: 60vh;
+    padding: 15px;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+header nav ul li :last-child {
+    right: 30px;
+}
+
+footer {
+    background-color: rgb(192, 216, 228);
+    padding: 20px;
+}
+
+header nav ul {
+    position: relative;
+}
+
+tr,
+th,
+td {
+    border: solid 2px black;
+    color: gray;
+    color: pink;
+    text-align: center;
+    height: 50px;
+}
+
+table {
+    width: 1000px
+}
+
+.cookiesImg {
+    width: 350px;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: aqua;
+}
