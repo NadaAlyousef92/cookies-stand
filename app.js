@@ -131,9 +131,9 @@ renderFooter();
 
 function footer4() {
     const footer4El = document.createElement('tr');
-    tableEl.appendChild(footer4);
-    const footer5El = document.createElement(footer5El);
-    footer5El.appendChild(footer5El);
+    tableEl.appendChild(footer4El);
+    const footer5El = document.createElement('th');
+    footer4El.appendChild(footer5El);
     footer5El.textContent = 'Total';
     for (let i = 0; i < allstores.length; i++) {
         const footer5El = document.createElement('th');
@@ -146,14 +146,15 @@ function footer4() {
 const branch = document.getElementById('cookies');
 branch.addEventListener('submit', function(event) {
     event.preventDefault();
-    const location = event.target.locationName.value;
-    constmin = parseInt(event.target.min.value);
-    constmax = parseInt(event.target.max.value);
-    constavg = parseInt(event.target.avg.value);
-    const store = new cookies(locationName, min, max, avg);
+    const locationName = event.target.locationName.value;
+    const min = parseInt(event.target.min.value);
+    const max = parseInt(event.target.max.value);
+    const avg = parseInt(event.target.avg.value);
+    const store = new Branch(locationName, min, max, avg);
 
 
-    tableEl.delete4(-1);
+    tableEl.deleteRow(-1);
+    store.calc();
     store.render();
     footer4();
     branch.reset();

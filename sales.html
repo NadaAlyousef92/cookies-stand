@@ -13,50 +13,36 @@
 
 <body>
     <header>
-        <h1 style="font-size: 25px;font-family: cursive;font-weight: bold;color: brown;"><b>Salmon shop cookies</b></h1>
-        <nav>
-            <lu style='background-color: aqua;color:brown'>
+        <h1 style="font-size: 25px;font-family: cursive;font-weight: bold;color: rgb(12, 67, 218);"><b>Salmon shop
+                cookies</b></h1>
+
+        <p style="font-size:200%;font-family:cursive;text-align:center"><a href="index.html">Home </a></p>
 
 
-                <li>Home</li>
-                <li>contact us</li>
-                <li>location adress</li>
-                <li>working hours:sun-thurs/from 6am-8pm</li>
-            </lu>
-        </nav>
 
 
         <img src=" ../img/salmon.png " alt="salmon " />
     </header>
     <main>
-
+        <form id="cookies">
+            <fieldset>
+                <legend>WElcome to salmon cookies store</legend>
+                <label for=" locationName">Location</label>
+                <input type="text " id="locationName" placeholder="Amman, dubai, kuwait, london ">
+                <label for="min">Min</label>
+                <input type="text " id="min" placeholder="Min. Customer #.">
+                <label for="max">Max</label>
+                <input type="text " id="max" placeholder="Max. Customer #.">
+                <label for="avg">Avg</label>
+                <input type="text " id="avg" placeholder="Avg. Cookies #">
+                <input type="submit">
+            </fieldset>
+        </form>
         <section id="cookies-shop">
         </section>
 
 
 
-
-        <section> <img class="cookiesImg" id="salmonCookiesImage" scr="img/cookies-salmon1.png" alt="salmon1">
-            <img class="cookiesImg" scr="img/cookies salmon1.jpg" alt="salmon2" />
-            <img class="cookiesImg" scr="img/cookies salmon3.jpg" alt="salmon3" />
-            <img class="cookiesImg" scr="img/cookies salmon4.jpg" alt="salmon4" />
-            <img class="cookiesImg" scr="img/cookies salmon5.jpg" alt="salmon5" />
-        </section>
-
-        <form id="cookies">
-            <fieldset>
-                <legend>WElcome to salmon cookies store</legend>
-                <label for=" locationName ">Location</label>
-                <input type="text " id="locationName " placeholder="Amman, dubai, kuwait, london " size="40" required>
-                <label for="min ">Min</label>
-                <input type="text " id="min " placeholder="Min Cust No. " size="15 " required>
-                <label for="max ">Max</label>
-                <input type="text " id="max " placeholder="Max. Cust No. " size="15" required>
-                <label for="avg ">Avg</label>
-                <input type="text " id="avg " placeholder="Avg Cookies " size="15 " required>
-                <input type="submit">
-            </fieldset>
-        </form>
     </main>
     <footer> designed by: Nada Alyousef</footer>
 
