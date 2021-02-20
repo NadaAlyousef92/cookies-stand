@@ -1,6 +1,6 @@
 'use strict';
 
-const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
+const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', 'Total'];
 
 
 
@@ -11,7 +11,7 @@ container.appendChild(articleEl);
 const tableEl = document.createElement('table');
 articleEl.appendChild(tableEl);
 
-const allstores = [];
+const allstores = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
 function Branch(location, min, max, avg, ) {
     this.location = location;
@@ -20,18 +20,21 @@ function Branch(location, min, max, avg, ) {
     this.avg = avg;
     this.cookiesPerHour = [];
     this.totalDailyCookies = 0;
-    allstores.push(this);
+    this.tot = 0;
+
 
 
 
 }
 
 Branch.prototype.calc = function() {
-    for (let i = 0; i < hours.length; i++) {
+    for (let i = 0; i < (hours.length - 1); i++) {
         const calcCookies = Math.floor(getRandomNumber(this.min, this.max) * this.avg);
         this.totalDailyCookies += calcCookies;
         this.cookiesPerHour.push(calcCookies);
+        this.tot += this.cookiesPerHour[i];
     }
+    this.cookiesPerHour[14] = this.tot;
 };
 
 Branch.prototype.render = function() {
@@ -46,11 +49,9 @@ Branch.prototype.render = function() {
         let td2El = document.createElement('td');
         rowEl.appendChild(td2El);
         td2El.textContent = this.cookiesPerHour[i];
-    }
+        allstores[i] += this.cookiesPerHour[i];
 
-    const td1E3 = document.createElement('td');
-    rowEl.appendChild(td1E3);
-    td1E3.textContent = this.totalDailyCookies;
+    }
 };
 
 function renderHeader() {
@@ -68,10 +69,6 @@ function renderHeader() {
         th2El.textContent = hours[i];
 
     }
-    const th3El = document.createElement('th');
-    headerEl.appendChild(th3El);
-    th3El.textContent = 'dailytot';
-
 
 }
 
@@ -83,19 +80,16 @@ function renderFooter() {
     footerEl.appendChild(thFooter1);
     thFooter1.textContent = 'Totals';
 
-    let totalsOFtotal = 0;
-    for (let i = 0; i < hours.length; i++) {
-        for (let j = 0; j < allstores.length; j++) {
-            const thfooter2 = document.createElement('th');
-            footerEl.appendChild(thfooter2);
-            thfooter2.textContent = allstores[i];
-        }
-        const thfooter3 = document.createElement('th');
-        footerEl.appendChild(thfooter3);
-        thfooter3.textContent = totalsOFtotal;
 
+    for (let i = 0; i < hours.length; i++) {
+
+        const thfooter2 = document.createElement('th');
+        footerEl.appendChild(thfooter2);
+        thfooter2.textContent = allstores[i];
     }
+
 }
+
 
 
 
@@ -115,12 +109,52 @@ const Dubai = new Branch('Dubai', 11, 38, 3.7);
 const Paris = new Branch('Paris', 20, 38, 3.7);
 
 const Lima = new Branch('Lima', 2, 16, 4.6);
+renderHeader();
+Seattle.calc();
+Seattle.render();
+Tokyo.calc();
+Tokyo.render();
+Dubai.calc();
+Dubai.render();
+Paris.calc();
+Paris.render();
+Lima.calc();
+Lima.render();
+renderFooter();
 
-(function renderTable() {
-    renderHeader();
+
+
+
+
+//New branch//
+
+
+function footer4() {
+    const footer4El = document.createElement('tr');
+    tableEl.appendChild(footer4);
+    const footer5El = document.createElement(footer5El);
+    footer5El.appendChild(footer5El);
+    footer5El.textContent = 'Total';
     for (let i = 0; i < allstores.length; i++) {
-        allstores[i].calc();
-        allstores.render();
+        const footer5El = document.createElement('th');
+        footer4El.appendChild(footer5El);
+        footer5El.textContent = allstores[i];
     }
-    renderFooter();
-})
+
+}
+
+const branch = document.getElementById('cookies');
+branch.addEventListener('submit', function(event) {
+    event.preventDefault();
+    const location = event.target.locationName.value;
+    constmin = parseInt(event.target.min.value);
+    constmax = parseInt(event.target.max.value);
+    constavg = parseInt(event.target.avg.value);
+    const store = new cookies(locationName, min, max, avg);
+
+
+    tableEl.delete4(-1);
+    store.render();
+    footer4();
+    branch.reset();
+});

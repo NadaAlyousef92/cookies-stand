@@ -7,28 +7,60 @@
     <title>cookie-stand</title>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight&display=swap" rel="stylesheet">
+
     <link href="../css/style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
     <header>
-        <nav>HOme contact us location adress working hours:sun-thurs from 6am-8pm
+        <h1 style="font-size: 25px;font-family: cursive;font-weight: bold;color: brown;"><b>Salmon shop cookies</b></h1>
+        <nav>
+            <lu style='background-color: aqua;color:brown'>
+
+
+                <li>Home</li>
+                <li>contact us</li>
+                <li>location adress</li>
+                <li>working hours:sun-thurs/from 6am-8pm</li>
+            </lu>
         </nav>
-        <h1><b>Salmon shop cookies</b></h1>
+
 
         <img src=" ../img/salmon.png " alt="salmon " />
     </header>
     <main>
 
         <section id="cookies-shop">
-
         </section>
 
+
+
+
+        <section> <img class="cookiesImg" id="salmonCookiesImage" scr="img/cookies-salmon1.png" alt="salmon1">
+            <img class="cookiesImg" scr="img/cookies salmon1.jpg" alt="salmon2" />
+            <img class="cookiesImg" scr="img/cookies salmon3.jpg" alt="salmon3" />
+            <img class="cookiesImg" scr="img/cookies salmon4.jpg" alt="salmon4" />
+            <img class="cookiesImg" scr="img/cookies salmon5.jpg" alt="salmon5" />
+        </section>
+
+        <form id="cookies">
+            <fieldset>
+                <legend>WElcome to salmon cookies store</legend>
+                <label for=" locationName ">Location</label>
+                <input type="text " id="locationName " placeholder="Amman, dubai, kuwait, london " size="40" required>
+                <label for="min ">Min</label>
+                <input type="text " id="min " placeholder="Min Cust No. " size="15 " required>
+                <label for="max ">Max</label>
+                <input type="text " id="max " placeholder="Max. Cust No. " size="15" required>
+                <label for="avg ">Avg</label>
+                <input type="text " id="avg " placeholder="Avg Cookies " size="15 " required>
+                <input type="submit">
+            </fieldset>
+        </form>
     </main>
     <footer> designed by: Nada Alyousef</footer>
 
-    <script src='../js/app.js'>
+    <script src='./app.js'>
     </script>
 
 </body>
